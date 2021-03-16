@@ -31,13 +31,13 @@ import (
 // manifestIdCmd represents the manifestId command
 var manifestIdCmd = &cobra.Command{
 	Use:   "manifest-id",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Retrieve image digest from tar file",
+	Long: `Retrieve the image digest from tar file and output to std down For example:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	loadmaster manifest-id pause.tar
+
+	You can export images from docker using 'docker save -o image.tar' 
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		manifestPath := args[0]
 		err := getManifestId(manifestPath)
